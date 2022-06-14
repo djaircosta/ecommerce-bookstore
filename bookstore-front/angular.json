@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "c8886ced-a5c2-44d0-af9d-c9bb2beab71c"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ecommerce": {
+    "bookstore-front": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ecommerce",
+            "outputPath": "dist/bookstore-front",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,6 +34,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -72,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ecommerce:build:production"
+              "browserTarget": "bookstore-front:build:production"
             },
             "development": {
-              "browserTarget": "ecommerce:build:development"
+              "browserTarget": "bookstore-front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ecommerce:build"
+            "browserTarget": "bookstore-front:build"
           }
         },
         "test": {
@@ -107,5 +111,5 @@
       }
     }
   },
-  "defaultProject": "ecommerce"
+  "defaultProject": "bookstore-front"
 }
